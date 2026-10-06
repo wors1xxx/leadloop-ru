@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LeadLoop помогает бизнесу быстрее обрабатывать входящие заявки и не терять клиентов.">
+  <meta name="theme-color" content="#070b16">
+  <title>LeadLoop — не теряйте входящие заявки</title>
+  <style>
+    :root{--bg:#070b16;--panel:#0d1424;--panel2:#111a2e;--text:#f7f9ff;--muted:#aab5ca;--line:rgba(255,255,255,.1);--accent:#7c5cff;--green:#27d7a3;--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 80% 0,rgba(124,92,255,.18),transparent 32rem),radial-gradient(circle at 0 30%,rgba(39,215,163,.07),transparent 28rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{text-decoration:none;color:inherit}.wrap{max-width:var(--max);margin:auto;padding:0 22px}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .logo{font-size:21px;font-weight:850;letter-spacing:-.04em}.logo span{color:var(--accent)}
+    .navlinks{display:flex;gap:26px;align-items:center}.navlink{color:var(--muted);font-size:14px}.navlink:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:13px;font-weight:800;font-size:14px;border:1px solid transparent;transition:.2s;cursor:pointer}
+    .btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(135deg,var(--accent),#5b42df);color:#fff;box-shadow:0 10px 35px rgba(124,92,255,.2)}.secondary{background:rgba(255,255,255,.04);border-color:var(--line)}
+    .hero{padding:96px 0 76px}.badge{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:999px;color:#cbd4e7;font-size:13px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 14px rgba(39,215,163,.7)}
+    h1{max-width:850px;margin:22px 0 18px;font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-.065em}.gradient{background:linear-gradient(90deg,#fff,#bdb0ff 55%,#7c5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:700px;color:var(--muted);font-size:19px;line-height:1.65;margin:0 0 30px}.actions{display:flex;gap:12px;flex-wrap:wrap}.note{font-size:12px;color:#7f8aa1;margin-top:13px}
+    section{padding:72px 0}.eyebrow{color:#9b8aff;font-weight:850;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.section-title{max-width:760px;margin-bottom:34px}
+    h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.045em;margin:10px 0 12px}.section-title p{color:var(--muted);margin:0;font-size:17px}
+    /* Исправленный блок процесса: никаких вложенных карточек внутри карточек */
+    .flow{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:14px;align-items:stretch}
+    .flow-item{min-width:0;min-height:180px;padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));display:flex;flex-direction:column}
+    .flow-number{font-size:12px;color:#b5a8ff;font-weight:850;letter-spacing:.03em;margin-bottom:20px}.flow-item h3{margin:0 0 10px;font-size:19px;letter-spacing:-.02em}.flow-item p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}.arrow{display:grid;place-items:center;color:#78839a;font-size:25px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:26px}.num{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:rgba(124,92,255,.14);color:#b5a8ff;font-weight:850;margin-bottom:20px}.card h3{margin:0 0 8px;font-size:20px}.card p{margin:0;color:var(--muted);font-size:15px}
+    .darkbox{border:1px solid var(--line);border-radius:28px;padding:34px;background:linear-gradient(135deg,rgba(124,92,255,.11),rgba(39,215,163,.04)),var(--panel)}
+    .price{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}.price-main{border:1px solid rgba(124,92,255,.35);background:linear-gradient(145deg,rgba(124,92,255,.13),rgba(255,255,255,.025));border-radius:28px;padding:34px}.price-value{font-size:48px;font-weight:850;letter-spacing:-.05em;margin:8px 0}.price-value small{font-size:16px;color:var(--muted);font-weight:500;letter-spacing:0}ul{padding:0;margin:24px 0;list-style:none}li{margin:12px 0;color:#d7ddec}li:before{content:"✓";color:var(--green);font-weight:900;margin-right:10px}.side{border:1px solid var(--line);border-radius:28px;padding:30px;background:var(--panel)}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}details{border:1px solid var(--line);border-radius:18px;padding:18px 20px;background:rgba(255,255,255,.025)}summary{cursor:pointer;font-weight:750}details p{color:var(--muted);margin:12px 0 0;font-size:14px}
+    .cta{text-align:center;padding:70px 24px;border:1px solid var(--line);border-radius:30px;background:radial-gradient(circle at 50% 0,rgba(124,92,255,.16),transparent 60%),var(--panel)}
+    .form{max-width:620px;margin:28px auto 0;text-align:left;display:grid;gap:12px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:12px;background:#080d19;color:#fff;font:inherit;outline:none}.field:focus{border-color:rgba(124,92,255,.7)}textarea.field{min-height:110px;resize:vertical}.form .btn{width:100%}
+    footer{padding:35px 0 45px;color:#778298;font-size:12px;border-top:1px solid var(--line);margin-top:72px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.grid3,.faq,.price,.form-row{grid-template-columns:1fr}.flow{grid-template-columns:1fr;gap:10px}.arrow{height:25px;transform:rotate(90deg)}.hero{padding-top:65px}.navlinks{display:none}.price-value{font-size:40px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#">Lead<span>Loop</span></a>
+    <div class="navlinks">
+      <a class="navlink" href="#how">Как работает</a>
+      <a class="navlink" href="#pricing">Стоимость</a>
+      <a class="btn primary" href="#contact">Получить демо</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="badge"><span class="dot"></span> Автоматизация входящих заявок</div>
+      <h1>Ни одна заявка не должна <span class="gradient">пропадать.</span></h1>
+      <p>LeadLoop помогает бизнесу быстрее отвечать на обращения, собирать данные клиента и передавать менеджеру уже подготовленную заявку.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Получить демо →</a>
+        <a class="btn secondary" href="#how">Как это работает</a>
+      </div>
+      <div class="note">Для малого и среднего бизнеса. Сценарий настраивается под конкретный процесс продаж.</div>
+    </section>
+
+    <section id="how">
+      <div class="section-title">
+        <div class="eyebrow">Принцип</div>
+        <h2>Простой процесс вместо потерянных обращений.</h2>
+        <p>LeadLoop закрывает самый простой, но дорогой провал: клиент написал, а ответ задержался.</p>
+      </div>
+      <div class="flow">
+        <article class="flow-item">
+          <div class="flow-number">01 · ВХОДЯЩАЯ ЗАЯВКА</div>
+          <h3>Клиент обращается</h3>
+          <p>Клиент оставляет сообщение, заявку или контакт через подключённый канал.</p>
+        </article>
+        <div class="arrow">→</div>
+        <article class="flow-item">
+          <div class="flow-number">02 · LEADLOOP РЕАГИРУЕТ</div>
+          <h3>Система отвечает</h3>
+          <p>Сценарий отвечает, задаёт нужные вопросы и фиксирует информацию о клиенте.</p>
+        </article>
+        <div class="arrow">→</div>
+        <article class="flow-item">
+          <div class="flow-number">03 · СЛЕДУЮЩИЙ ШАГ</div>
+          <h3>Менеджер получает заявку</h3>
+          <p>Менеджер видит структурированную информацию и понимает, что делать дальше.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><div class="eyebrow">Что получает бизнес</div><h2>Меньше ручной рутины. Больше контроля.</h2></div>
+      <div class="grid3">
+        <div class="card"><div class="num">01</div><h3>Быстрая реакция</h3><p>Первичный контакт не зависит от того, свободен ли менеджер прямо сейчас.</p></div>
+        <div class="card"><div class="num">02</div><h3>Сбор данных</h3><p>Нужная информация от клиента собирается по заранее заданному сценарию.</p></div>
+        <div class="card"><div class="num">03</div><h3>Контроль заявок</h3><p>Меньше ситуаций, когда обращение осталось без ответа или затерялось в переписке.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="darkbox">
+        <div class="section-title"><div class="eyebrow">Подход</div><h2>Не «ещё один чат-бот».</h2><p>Мы автоматизируем конкретный процесс обработки заявки, а не просто ставим виджет на сайт.</p></div>
+        <div class="grid3">
+          <div><h3>Сценарий</h3><p class="card p">Определяем, что должен спросить и сделать LeadLoop.</p></div>
+          <div><h3>Интеграции</h3><p class="card p">Подключаем нужные каналы и передаём информацию менеджеру.</p></div>
+          <div><h3>Улучшение</h3><p class="card p">Смотрим на реальные обращения и постепенно улучшаем сценарий.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="section-title"><div class="eyebrow">Стоимость</div><h2>Понятная подписка без сложных тарифов.</h2><p>Финальная стоимость подключения зависит от каналов и сценария конкретного бизнеса.</p></div>
+      <div class="price">
+        <div class="price-main">
+          <div class="eyebrow">LeadLoop Business</div>
+          <div class="price-value">14 900 ₽ <small>/ месяц</small></div>
+          <p style="color:var(--muted)">Подключение и первоначальная настройка рассчитываются отдельно после короткого аудита.</p>
+          <ul><li>Настройка сценария обработки заявок</li><li>Автоматизация первичного ответа</li><li>Сбор ключевой информации</li><li>Передача заявки менеджеру</li><li>Поддержка и улучшение сценария</li></ul>
+          <a class="btn primary" href="#contact">Обсудить подключение →</a>
+        </div>
+        <div class="side"><h3>Кому подходит</h3><p style="color:var(--muted)">Компаниям, где регулярно приходят обращения, но скорость ответа или ручная обработка мешают продажам.</p><hr style="border:0;border-top:1px solid var(--line);margin:25px 0"><h3>Примеры</h3><p style="color:var(--muted)">Услуги, агентства, студии, локальный бизнес, B2B и другие компании с повторяющимся процессом обработки обращений.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><div class="eyebrow">FAQ</div><h2>Частые вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Это просто чат-бот?</summary><p>Нет. LeadLoop автоматизирует конкретный процесс: ответить, собрать данные и передать клиента дальше.</p></details>
+        <details><summary>Можно ли адаптировать под мой бизнес?</summary><p>Да. Сценарий зависит от продукта, вопросов к клиенту и действия после обращения.</p></details>
+        <details><summary>Какие каналы можно подключить?</summary><p>На старте можно сделать один основной канал, а затем добавить другие.</p></details>
+        <details><summary>Есть ли гарантия роста продаж?</summary><p>Нет. Сервис улучшает обработку обращений, но результат зависит от продукта, трафика и работы бизнеса.</p></details>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="cta">
+        <div class="eyebrow">Демо</div>
+        <h2>Покажем, где бизнес может терять заявки.</h2>
+        <p style="color:var(--muted);max-width:620px;margin:12px auto 0">Заполни форму — она подготовит письмо с данными потенциального клиента.</p>
+        <form class="form" id="leadForm">
+          <div class="form-row">
+            <input class="field" name="name" placeholder="Ваше имя" required>
+            <input class="field" name="company" placeholder="Компания" required>
+          </div>
+          <div class="form-row">
+            <input class="field" name="contact" placeholder="Telegram / телефон" required>
+            <input class="field" name="volume" placeholder="Заявок в месяц, примерно">
+          </div>
+          <textarea class="field" name="message" placeholder="Чем занимается компания и откуда приходят заявки?"></textarea>
+          <button class="btn primary" type="submit">Отправить заявку →</button>
+          <div class="note" id="formStatus"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row"><div>© 2026 LeadLoop</div><div>Автоматизация обработки входящих заявок</div></div>
+    <div style="margin-top:12px">Перед коммерческим запуском добавьте реальные реквизиты, контакты и необходимые юридические документы.</div>
+  </footer>
+</div>
+
+<script>
+  // Пока backend не подключён, форма безопасно подготавливает письмо.
+  // Когда подключим API, заменим этот обработчик на POST /api/leads.
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(this);
+    const subject = encodeURIComponent('Новая заявка LeadLoop — ' + (data.get('company') || 'без названия'));
+    const body = encodeURIComponent(
+      'Имя: ' + data.get('name') + '\n' +
+      'Компания: ' + data.get('company') + '\n' +
+      'Контакт: ' + data.get('contact') + '\n' +
+      'Заявок в месяц: ' + (data.get('volume') || 'не указано') + '\n\n' +
+      'О компании:\n' + (data.get('message') || 'не указано')
+    );
+    window.location.href = 'mailto:leadloopru@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('formStatus').textContent = 'Откроется почтовое приложение с готовой заявкой.';
+  });
+</script>
+</body>
+</html>
